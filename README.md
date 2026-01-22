@@ -5,7 +5,7 @@
 # About
 
 ### Purpose: 
-Panama's Pacific coast experiences unique oceanographic conditions, with upwelling and non-upwelling zones in close proximity. This analysis examines sea surface temperature trends and thermal stress patterns along Panama's Pacific coast in recent years. Furthermore, this analysis will demonstrate how coral bleaching and resilence relate to upwelling. Understanding how coral bleaching is related to upwelling may enable us to better understand the mechanisms that underlie coral reef reislience. 
+Panama's Pacific coast experiences unique oceanographic conditions, with upwelling and non-upwelling zones in close proximity. This analysis examines sea surface temperature trends and thermal stress patterns along Panama's Pacific coast in recent years. Furthermore, this analysis will demonstrate how coral bleaching and resilence relate to upwelling. Understanding how coral bleaching is related to upwelling may enable us to better understand the mechanisms that underlie coral reef resilience. 
 
 
 ### Data descriptions: 
@@ -14,7 +14,7 @@ Panama's Pacific coast experiences unique oceanographic conditions, with upwelli
 
 ### References: 
 
-[1] NOAA Coral Reef Watch. (2025). *NOAA Coral Reef Watch 5km Regional Virtual Stations Time Series Data for Panama Pacific East* [Data file]. NOAA Coral Reef Watch, College Park, Maryland, USA. Available: https://coralreefwatch.noaa.gov/product/vs/. [Accessed January 22, 2025].
+[1] NOAA Coral Reef Watch. (2025). *NOAA Coral Reef Watch 5km Regional Virtual Stations Time Series Data for Panama Pacific East* [Data file]. NOAA Coral Reef Watch, College Park, Maryland, USA. Available: https://coralreefwatch.noaa.gov/product/vs/. [Accessed January 20, 2025].
 
 **Required Tools:**  
 - Python
