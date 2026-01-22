@@ -10,7 +10,7 @@ Panama's Pacific coast experiences unique oceanographic conditions, with upwelli
 
 ### Data descriptions: 
 **panama_pacific_east.txt**
-- - Daily sea surface temperature and coral bleaching thermal stress data for Panama's Pacific East region from 1985-present
+- Daily sea surface temperature and coral bleaching thermal stress data for Panama's Pacific East region from 1985-present
 
 ### References: 
 
