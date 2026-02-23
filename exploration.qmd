@@ -1,0 +1,193 @@
+---
+title: "Infographic Data Exploration"
+author: "Richie Montes Lemus"
+date: today
+format: pdf
+---
+
+```{r, message=FALSE}
+library(tidyverse)
+library(here)
+library(janitor)
+library(showtext)
+library(glue)
+library(ggtext)
+```
+
+## Read in NOAA Time Series Data 
+
+```{r}
+# Read in Eastern Panama Data 
+
+p_east_lines <- readLines(here("data","panama_pacific_east.txt")) # Create a vector containing each row
+
+p_east_skip_rows <- which(grepl("YYYY MM DD", p_east_lines)) # Finds rows before date
+
+ts_window <- 84 # Remove first 12 weeks for an accurate DHW rolling value 
+
+# Read the data
+panama_east <- read.table(here("data", "panama_pacific_east.txt"), 
+                     skip = p_east_skip_rows + ts_window, # Skip non row information at the top of the dataset and first 12 weeks 
+                     header = FALSE,
+                     col.names = c("year", "month", "day", "sst_min", "sst_max", # Add column names
+                                   "sst_90th_hs", "ssta_90th_hs", "hs_90th", 
+                                   "dhw", "baa_7day_max")) %>% 
+  mutate(site = "panama_east", upwelling = TRUE)
+
+```
+
+```{r}
+# Read in Western Panama Data 
+
+p_west_lines <- readLines(here("data","panama_pacific_west.txt")) # Create a vector containing each row
+
+p_west_skip_rows <- which(grepl("YYYY MM DD", p_west_lines)) # Finds rows before date
+
+# Read the data
+panama_west <- read.table(here("data", "panama_pacific_west.txt"), 
+                     skip = p_west_skip_rows + ts_window, # Skip non row information at the top of the dataset and first 12 weeks 
+                     header = FALSE,
+                     col.names = c("year", "month", "day", "sst_min", "sst_max", # Add column names
+                                   "sst_90th_hs", "ssta_90th_hs", "hs_90th", 
+                                   "dhw", "baa_7day_max")) %>% 
+  mutate(site = "panama_west", upwelling = FALSE)
+
+```
+
+# Visualize DHW for Upwelling and Non-Upwelling Zones in Panama Over Time 
+The following exploratory analysis will explore Degree Heating Weeks (DHW) over time. DHW represents accumulated heat stress over a 12-week period when ocean temperatures exceed a coral bleaching threshold. Values are measured in °C-weeks, where higher values mean there is a greater bleaching risk.
+
+```{r}
+panama_east %>% 
+ggplot(aes(x = year, y = dhw)) +
+  geom_line(color = "darkblue") +
+  geom_hline(yintercept = 4, linetype = "dashed", color = "orange") + # First bleaching threshold 
+  geom_hline(yintercept = 8, linetype = "dashed", color = "red") + # Second critical bleaching threshold
+  labs(title = "DHW - Panama Pacific East (Upwelling)",
+       x = "Date", y = "DHW (°C-weeks)") +
+  theme_minimal()
+
+```
+```{r}
+panama_west %>% 
+ggplot(aes(x = year, y = dhw)) +
+  geom_line(color = "darkblue") +
+  geom_hline(yintercept = 4, linetype = "dashed", color = "orange") + # First bleaching threshold
+  geom_hline(yintercept = 8, linetype = "dashed", color = "red") + # Second critical bleaching threshold
+  labs(title = "DHW - Panama Pacific West (Non-Upwelling)",
+       x = "Date", y = "DHW (°C-weeks)") +
+  theme_minimal()
+```
+
+# Visualize DHW for Upwelling and Non-Upwelling Zones in Panama During Mass Bleaching Event and Potential Recovery - February 2023 to November 2023
+```{r}
+panama_concat <- bind_rows(panama_east, panama_west) %>% 
+  filter(year == 2023) %>% 
+  filter(month >= 2 & month <= 11)
+```
+
+```{r}
+# Create box plot showing spread of DHW between upwelling and non upwelling zones
+panama_concat %>% 
+  ggplot(aes(x = site, y = dhw, fill = upwelling)) +
+  geom_boxplot() +
+  labs(title = "DHW Between Upwelling and Non-Upwelling Zones in Panama's Pacific",
+       x = "Site", 
+       y = "Degree Heating Weeks (°C-weeks)") +
+  theme_minimal()
+```
+
+# Visualize Bleaching Alerts Between Upwelling and Non-Upwelling Zones in Panama During Mass Bleaching Event and Potential Recovery - February 2023 to November 2023
+
+```{r}
+#......................import Google fonts.......................
+# `name` is the name of the font as it appears in Google Fonts
+# `family` is the user-specified id that you'll use to apply a font in your ggplot
+font_add_google(name = "Sarala", family = "sarala")
+font_add_google(name = "Noto Sans", family = "noto-sans")
+font_add_google(name = "Red Hat Mono", family = "red")
+#....................import Font Awesome fonts...................
+
+font_add(family = "fa-brands",
+         regular = here::here("fonts", "Font Awesome 7 Brands-Regular-400.otf"))
+# Palette 
+
+pal <- c("dark_gray" = "#0C1509",
+         "light_gray" = "#4E514D")
+
+```
+
+
+```{r}
+# Create alter level column with intuitive bleaching alert labels
+panama_concat <- panama_concat %>%
+  mutate(alert_level = case_when(
+    baa_7day_max == 0 ~ "No Stress",
+    baa_7day_max == 1 ~ "Bleaching Watch",
+    baa_7day_max == 2 ~ "Bleaching Warning",
+    baa_7day_max == 3 ~ "Alert Level 1",
+    baa_7day_max == 4 ~ "Alert Level 2"
+  ),
+  
+  # Factorize alters and establish levels for consistent plotting
+  alert_level = factor(alert_level, levels = c("Alert Level 2", "Alert Level 1",
+                                                 "Bleaching Warning", "Bleaching Watch",
+                                                 "No Stress")))
+
+# Create a stacked bar chart
+panama_concat %>% 
+  ggplot(aes(x = factor(upwelling), fill = alert_level)) +
+  geom_bar(position = "fill") +
+  scale_fill_manual(values = c("No Stress" = "#2E86AB", 
+                                "Bleaching Watch" = "#FFEB3B",
+                                "Bleaching Warning" = "#FF9800",
+                                "Alert Level 1" = "#FF5722",
+                                "Alert Level 2" = "#B71C1C")) +
+  labs(title = "Bleaching Alert Distribution of Pacific Regions in Panama (Feb-Oct 2023)",
+       x = "Upwelling Status", 
+       y = "Percentage of Days",
+       fill = "Alert Level") +
+  theme_minimal() + 
+  theme_light(base_size = 17) + 
+  theme(
+    plot.title.position = "plot", # Fully left aligns to plot text
+    plot.title = ggtext::element_markdown(family = "sarala",
+                              face = "bold",
+                              size = rel(0.99),
+                              color = pal["dark_gray"], 
+                              lineheight = 1.5),
+    axis.text = element_text(family = "red", 
+                             size = rel(0.5),
+                             color = pal["light_gray"]),
+    axis.title.x = element_text(family = "noto-sans",
+                                size = rel(0.5),
+                                margin = margin(t = 15)),
+    axis.title.y = element_blank(),
+    plot.caption = ggtext::element_markdown(family = "noto-sans",
+                                face = "italic",
+                                size = rel(0.5),
+                                color = pal["light_gray"],
+                                margin = margin(t = 15),
+                                lineheight = 1.5),
+    panel.grid.major.x = element_blank(),
+    panel.grid.major.y = element_blank(),
+    panel.grid.minor.x = element_blank(),
+    panel.grid.minor.y = element_blank(),
+    plot.margin = margin(t = 1, r = 0.5, b = 1, l = 0.5, "cm"),
+    legend.title = element_text(size = rel(0.5)),
+    legend.position = "bottom",
+    legend.text = element_text(size = rel(0.5)))
+
+showtext_auto(enable = TRUE)
+```
+## Questions
+**1. What have you learned about your data? Have any potentially interesting patterns emerged? Point to specific visualizations that you created as you describe your findings.**
+I have learned that, historically Panama's upwelling zones experience less bleaching risks. This is apparent in the first visualization. It shows that the non-upwelling zone crossed the bleaching threshold more often than the upwelling zone. However, when looking at the box plot and stacked histogram, I saw that during a recent bleaching event in 2023, the upwelling zone experienced more extremities in bleaching risks. Although there were a lot more "no stress" alerts in upwelling zones compared to non-upwelling zones, upwelling zones also had a lot more "alert 2" severe stress alerts. 
+
+**2. In FPM #1, you outlined some questions that you wanted to answer using these data. Have you made any strides towards answering those questions? If yes, how so? If no, what next steps do you need to take (e.g. I need to create X plot type, I still need to track down Y data, I need to restructure existing data so that you can visualize it in Z ways, etc.)? Have any new questions emerged?**
+I have definitely made strides in answering those questions. These visualizations help me answer my question about how bleaching risks have changed over time. The time series line plot visualizes DHW overtime, which is a proxy for coral bleaching. In order to see if upwelling zones buffer corals from bleaching stress I still need my old lab to send me data about coral bleaching and recovery in upwelling vs non-upwelling zones. I am now curious about whether the bleaching risk extremities associated with upwelling zones might be more harmful for coral. Also, I recently learned upwelling did not occur in Panama for the first time in recorded history this past year. I'm wondering if I could do something with this data to further investigate the impacts of upwelling on bleaching.  
+
+**3. What challenges do you foresee encountering with your data? These can be data wrangling and / or visualization challenges.**
+
+I'm still wrapping my head around a lot of NOAA Coral Reef Watch's terminology and how they calculate their metrics. Variables like Degree Heating Weeks (DHW) and the 90th percentile HotSpot values come from complex equations that I don't fully understand yet, so I need to make sure I'm interpreting them correctly in my visualizations. Another concern is that there are a number of complex interactions that lead to coral bleaching. I don't want to violate some important statistical and biological principals while conducting my analysis. Therefore, I plan to review the NOAA metadata and reach out for guidance on the best statistical approaches for this type of comparison to make sure my analysis is sound.
+
