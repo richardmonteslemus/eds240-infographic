@@ -1,0 +1,7 @@
+---
+title: "EDS 240 Final Project"
+author: "Richard Montes Lemus"
+format: html
+editor: visual
+---
+
