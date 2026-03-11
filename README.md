@@ -5,19 +5,23 @@
 # About
 
 ### Purpose: 
-Panama's Pacific coast experiences unique oceanographic conditions, with upwelling and non-upwelling zones in close proximity. This analysis examines sea surface temperature trends and thermal stress patterns along Panama's Pacific coast in recent years. Furthermore, this analysis will demonstrate how coral bleaching and resilence relate to upwelling. Understanding how coral bleaching is related to upwelling may enable us to better understand the mechanisms that underlie coral reef resilience. 
+Panama's Pacific coast experiences unique oceanographic conditions, with upwelling and non-upwelling zones in close proximity. This analysis examines degree heating week and coral bleaching trends along Panama's Pacific coast during the 2023 - 2024 mass bleaching event. Furthermore, this analysis will demonstrate how coral bleaching, recovery, and death vary across upwelling regime and coral species. Understanding these differences in bleaching may enable us to better understand the mechanisms that underlie coral bleaching. 
 
 
 ### Data descriptions: 
 **panama_pacific_east.txt**
-- Daily sea surface temperature and coral bleaching thermal stress data for Panama's Pacific East region from 1985-present
+- Coral bleaching thermal stress data for Panama's Pacific East region from 1985-present
+- 
+**panama_pacific_west.txt**
+- Coral bleaching thermal stress data for Panama's Pacific West region from 1985-present
 
 ### References: 
 
 [1] NOAA Coral Reef Watch. (2025). *NOAA Coral Reef Watch 5km Regional Virtual Stations Time Series Data for Panama Pacific East* [Data file]. NOAA Coral Reef Watch, College Park, Maryland, USA. Available: https://coralreefwatch.noaa.gov/product/vs/. [Accessed January 20, 2025].
 
+[2] Connolly Lab, Smithsonian Tropical Research Institute
+
 **Required Tools:**  
-- Python
 - R
 
 Acknowledgement: 
