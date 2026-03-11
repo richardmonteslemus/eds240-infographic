@@ -1,11 +1,19 @@
-# Panama's Pacific Coral Bleaching Analysis
+# Bleaching Patterns in Panama’s Pacific
 
 ### Author: Richard Montes Lemus 
 
-# About
+# Background
+Panama’s Pacific coast is unique because it has upwelling and non-upwelling zones located right next to each other, separated by the Azuero Peninsula. The upwelling region seasonally receives cool, nutrient-rich water, while the non-upwelling region does not experience these seasonal inputs.
 
-### Purpose: 
-Panama's Pacific coast experiences unique oceanographic conditions, with upwelling and non-upwelling zones in close proximity. This analysis examines degree heating week and coral bleaching trends along Panama's Pacific coast during the 2023 - 2024 mass bleaching event. Furthermore, this analysis will demonstrate how coral bleaching, recovery, and death vary across upwelling regime and coral species. Understanding these differences in bleaching may enable us to better understand the mechanisms that underlie coral bleaching. 
+Scientists at the Smithsonian Tropical Research Institute have used this natural contrast to study how coral bleaching differs across upwelling regimes. In these reefs, Pocillopora type 1 and type 3 dominate the coral community, making up about 90% of the coral population.
+
+Understanding bleaching patterns across these environments can help reveal which ocean conditions may provide refuge for corals and how bleaching responses vary between coral species and environmental conditions.
+
+This infographic explores the following questions:
+
+- How does coral bleaching differ between upwelling and non-upwelling zones?
+
+- How does bleaching differ between Pocillopora type 1 and type 3 across these upwelling regimes?
 
 
 ### Data descriptions: 
