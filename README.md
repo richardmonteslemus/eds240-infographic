@@ -26,16 +26,21 @@ The 2023–2024 mass bleaching event provides a real-world test of whether coral
 
 ```
 ├── data
-│   ├── panama_pacific_east.txt
-│   ├── panama_pacific_west.txt
-│   └── point_data.parquet
-├── images
-│   ├── filled-prop.png
-│   ├── line-plot.png
-│   ├── panama-bleaching.png
-│   └── stacked-area.png
-├── index.qmd
+│   ├── panama_pacific_east.txt
+│   ├── panama_pacific_west.txt
+│   └── point_data.parquet
+├── drafting-viz.pdf
+├── drafting-viz.qmd
+├── eds240-infographic.qmd
+├── eds240-infographic.Rproj
+├── exploration.pdf
+├── exploration.qmd
+├── fonts
+├── infographic_assembly.qmd
+├── infographic_blogpost.html
+├── infographic_blogpost.qmd
 └── README.md
+
 ```
 
 ### Data Descriptions:
