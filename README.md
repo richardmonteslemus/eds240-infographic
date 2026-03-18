@@ -24,7 +24,6 @@ This infographic explores the following questions:
 **panama_pacific_west.txt**
 - Coral bleaching thermal stress data for Panama's Pacific West region from 1985-present
 
-### Data descriptions: 
 **point_data.parquet**
 - Coral reef transect grid point data. Each point is labeled based on coral species and composition (i.e. Bleached, Alive, Dead, Background). 
   
