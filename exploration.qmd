@@ -68,6 +68,15 @@ ggplot(aes(x = year, y = dhw)) +
   theme_minimal()
 
 ```
+
+```{r}
+# Create date and filter to Feb 2023 - Aug 2024
+dhw_plot <- panama_east %>%
+  mutate(date = as.Date(paste(year, month, day, sep = "-"))) %>%
+  filter(date >= as.Date("2023-02-01") & date <= as.Date("2024-08-31"))
+```
+
+
 ```{r}
 panama_west %>% 
 ggplot(aes(x = year, y = dhw)) +
@@ -178,7 +187,7 @@ panama_concat %>%
     legend.position = "bottom",
     legend.text = element_text(size = rel(0.5)))
 
-showtext_auto(enable = TRUE)
+showtext_auto(enable = FALSE)
 ```
 ## Questions
 **1. What have you learned about your data? Have any potentially interesting patterns emerged? Point to specific visualizations that you created as you describe your findings.**
