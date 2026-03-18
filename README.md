@@ -3,7 +3,7 @@
 
 ### Author: Richard Montes Lemus 
 
-# About
+## About
 
 ### Purpose:
 Panama's Pacific coast offers a unique natural experiment: two adjacent regions with very different ocean conditions, separated by the Azuero Peninsula. The Gulf of Panama experiences seasonal upwelling — a process where strong winds drive cold, nutrient-rich water to the surface — while the Gulf of Chiriquí remains consistently warm and stable year-round.
