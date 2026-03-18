@@ -72,10 +72,15 @@ Connolly Lab, Smithsonian Tropical Research Institute
 **File:**
 
 - `drafting-viz.pdf`
+  Document containing the infographic brainstorm process
 - `exploration.pdf`
+  Document with exploratory visualizations
 - `fonts`
+  Alternative fonts used for some visualizations
 - `infographic_assembly.html`
+  Final infographic plots
 - `infographic_blogpost.html`
+  Infographic blog post rough draft
 
 **Required Tools:**
 - R: `tidyverse`, `here`, `janitor`, `showtext`, `glue`, `ggtext`, `arrow`, `dplyr`, `lubridate`
