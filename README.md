@@ -72,12 +72,10 @@ Connolly Lab, Smithsonian Tropical Research Institute
 **File:**
 
 - `drafting-viz.pdf`
-- `eds240-infographic.qmd`
 - `exploration.pdf`
-- `infographic_assembly.qmd`
 - `fonts`
-
-- 
+- `infographic_assembly.html`
+- `infographic_blogpost.html`
 
 **Required Tools:**
 - R: `tidyverse`, `here`, `janitor`, `showtext`, `glue`, `ggtext`, `arrow`, `dplyr`, `lubridate`
