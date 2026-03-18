@@ -44,13 +44,13 @@ The 2023–2024 mass bleaching event provides a real-world test of whether coral
 - NOAA Coral Reef Watch 5km virtual station time series data for Panama's Pacific East (upwelling) region, including degree heating weeks and sea surface temperature from 1985–present.
 
 **Access:**
-[NOAA Coral Reef Watch](https://coralreefwatch.noaa.gov/product/vs/)
+[NOAA Coral Reef Watch](https://coralreefwatch.noaa.gov/product/vs/gauges/panama_pacific_east.php)
 
 **panama_pacific_west.txt**
 - NOAA Coral Reef Watch 5km virtual station time series data for Panama's Pacific West (non-upwelling) region, including degree heating weeks and sea surface temperature from 1985–present.
 
 **Access:**
-[NOAA Coral Reef Watch](https://coralreefwatch.noaa.gov/product/vs/)
+[NOAA Coral Reef Watch](https://coralreefwatch.noaa.gov/product/vs/gauges/panama_pacific_west.php)
 
 **point_data.parquet**
 - Photoquadrat point-count classification data from coral reef transects collected by the Connolly Lab at the Smithsonian Tropical Research Institute. Includes coral health status (alive, bleached, dead) by species type, site, and date across upwelling and non-upwelling zones.
@@ -60,9 +60,9 @@ Connolly Lab, Smithsonian Tropical Research Institute
 
 ### References:
 
-[1] NOAA Coral Reef Watch. (2025). *NOAA Coral Reef Watch 5km Regional Virtual Stations Time Series Data for Panama Pacific East* [Data file]. NOAA Coral Reef Watch, College Park, Maryland, USA. Available: https://coralreefwatch.noaa.gov/product/vs/. [Accessed January 20, 2025].
+[1] NOAA Coral Reef Watch. (2025). *NOAA Coral Reef Watch 5km Regional Virtual Stations Time Series Data for Panama Pacific East* [Data file]. NOAA Coral Reef Watch, College Park, Maryland, USA. Available: https://coralreefwatch.noaa.gov/product/vs/gauges/panama_pacific_east.php. [Accessed January 20, 2025].
 
-[2] NOAA Coral Reef Watch. (2025). *NOAA Coral Reef Watch 5km Regional Virtual Stations Time Series Data for Panama Pacific West* [Data file]. NOAA Coral Reef Watch, College Park, Maryland, USA. Available: https://coralreefwatch.noaa.gov/product/vs/. [Accessed January 20, 2025].
+[2] NOAA Coral Reef Watch. (2025). *NOAA Coral Reef Watch 5km Regional Virtual Stations Time Series Data for Panama Pacific West* [Data file]. NOAA Coral Reef Watch, College Park, Maryland, USA. Available: https://coralreefwatch.noaa.gov/product/vs/gauges/panama_pacific_west.php. [Accessed January 20, 2025].
 
 [3] Connolly Lab, Smithsonian Tropical Research Institute. *Coral reef photoquadrat point-count data, Panama Pacific* [Data file].
 
