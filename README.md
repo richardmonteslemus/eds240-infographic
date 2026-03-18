@@ -1,4 +1,5 @@
-# Bleaching Patterns in Panama’s Pacific
+# Are Corals from Upwelling Zones Hardended Against Bleaching?
+### Assessing Coral Bleaching Resistance in the Upwelling vs Non-upwelling Zone of Panama’s Pacific
 
 ### Author: Richard Montes Lemus 
 
@@ -19,10 +20,14 @@ This infographic explores the following questions:
 ### Data descriptions: 
 **panama_pacific_east.txt**
 - Coral bleaching thermal stress data for Panama's Pacific East region from 1985-present
-- 
+  
 **panama_pacific_west.txt**
 - Coral bleaching thermal stress data for Panama's Pacific West region from 1985-present
 
+### Data descriptions: 
+**point_data.parquet**
+- Coral reef transect grid point data. Each point is labeled based on coral species and composition (i.e. Bleached, Alive, Dead, Background). 
+  
 ### References: 
 
 [1] NOAA Coral Reef Watch. (2025). *NOAA Coral Reef Watch 5km Regional Virtual Stations Time Series Data for Panama Pacific East* [Data file]. NOAA Coral Reef Watch, College Park, Maryland, USA. Available: https://coralreefwatch.noaa.gov/product/vs/. [Accessed January 20, 2025].
