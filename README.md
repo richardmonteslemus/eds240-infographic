@@ -3,10 +3,6 @@
 
 ### Author: Richard Montes Lemus 
 
-# Background# Are Corals from Upwelling Zones Hardened Against Bleaching?
-
-### Author: Richard Montes Lemus
-
 # About
 
 ### Purpose:
