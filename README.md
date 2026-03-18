@@ -6,16 +6,16 @@
 ## About
 
 ### Purpose:
-Panama's Pacific coast offers a unique natural experiment: two adjacent regions with very different ocean conditions, separated by the Azuero Peninsula. The Gulf of Panama experiences seasonal upwelling — a process where strong winds drive cold, nutrient-rich water to the surface — while the Gulf of Chiriquí remains consistently warm and stable year-round.
+Panama's Pacific coast offers a unique natural experiment: two adjacent regions with very different ocean conditions, separated by the Azuero Peninsula. The Gulf of Panama experiences seasonal upwelling, a process where strong winds push cold, nutrient-rich water to the surface, while the Gulf of Chiriquí remains consistently warm and stable year-round.
 
-Scientists at the Smithsonian Tropical Research Institute have used this contrast to study how corals respond to environmental stress. This analysis focuses on two dominant coral species: *Pocillopora* Type 1, a slow-growing coral that tends to be more resistant to bleaching, and Type 3, a fast-growing species more vulnerable to heat stress. Together they make up roughly 90% of coral cover in Panama's Pacific.
+Scientists at the Smithsonian Tropical Research Institute have used this contrast to study how corals respond to environmental stress. This analysis focuses on two dominant coral species: Pocillopora Type 1, a slow-growing coral that tends to be more resistant to bleaching, and Type 3, a fast-growing species more vulnerable to heat stress. Together they make up roughly 90% of coral cover in Panama's Pacific.
 
 The 2023–2024 mass bleaching event provides a real-world test of whether corals in more variable, upwelling-exposed environments are more resilient to ocean warming. This infographic compares bleaching and mortality patterns across upwelling regimes and between coral types to explore that question.
 
 **This infographic explores the following questions:**
-- How does coral species composition differ between upwelling and non-upwelling zones?
-- How does thermal stress vary over time across upwelling regimes?
-- How do bleaching and mortality patterns differ between *Pocillopora* Type 1 and Type 3 across zones and over time?
+- Differences in coral species composition between upwelling and non-upwelling zones
+- How heat stress varies over time across upwelling regimes.
+- How bleaching and mortality between Pocillopora Type 1 and Type 3 vary across time in non-upwelling vs upwelling regimes.
 
 ### Highlights:
 - Coral silhouette fill chart showing species composition by upwelling zone
