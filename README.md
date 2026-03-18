@@ -30,15 +30,11 @@ The 2023–2024 mass bleaching event provides a real-world test of whether coral
 │   ├── panama_pacific_west.txt
 │   └── point_data.parquet
 ├── drafting-viz.pdf
-├── drafting-viz.qmd
-├── eds240-infographic.qmd
 ├── eds240-infographic.Rproj
 ├── exploration.pdf
-├── exploration.qmd
 ├── fonts
-├── infographic_assembly.qmd
+├── infographic_assembly.html
 ├── infographic_blogpost.html
-├── infographic_blogpost.qmd
 └── README.md
 
 ```
@@ -75,8 +71,13 @@ Connolly Lab, Smithsonian Tropical Research Institute
 
 **File:**
 
-Quarto document containing the infographic, design rationale, and R code for all visualizations
-- `index.qmd`
+- `drafting-viz.pdf`
+- `eds240-infographic.qmd`
+- `exploration.pdf`
+- `infographic_assembly.qmd`
+- `fonts`
+
+- 
 
 **Required Tools:**
 - R: `tidyverse`, `here`, `janitor`, `showtext`, `glue`, `ggtext`, `arrow`, `dplyr`, `lubridate`
